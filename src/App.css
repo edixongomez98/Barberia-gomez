@@ -1,0 +1,151 @@
+.App {
+  text-align: center;
+  background: linear-gradient(135deg, #fff 0%, #e3e3e3 100%);
+  min-height: 100vh;
+}
+
+.App-header {
+  background: linear-gradient(9000deg, #030513 50%, #040b5d 100%);
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(12px + 2vmin);
+  color: #040604fd;
+  box-shadow: 0 4px 16px rgba(9, 1, 8, 0.785);
+  padding: 40px 0;
+}
+
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4rem;
+  letter-spacing: 2px;
+  color: #008cff;
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 8px #9b03a0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+}
+
+li {
+  background: #fff;
+  color: #0a1056;
+  border-left: 25px solid #d32f2f;
+  border-radius: 4px;
+  margin: 8px 0;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-weight: bold;
+}
+
+p {
+  color: #fff;
+  font-size: 1.1rem;
+  margin: 12px 0;
+}
+
+.App-link {
+  color: #3c00ff;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .App-header {
+    font-size: 1rem;
+    padding: 20px 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  li {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+}
+
+.App-logo {
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 4px solid #f01616;
+  background: #0a0101;
+  animation: App-logo-spin-3d 5s linear infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes App-logo-spin-3d {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30, 30, 30, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #7e6f38;
+  color: #1a237e;
+  padding: 32px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  min-width: 280px;
+  text-align: center;
+}
+
+.modal-content h2 {
+  margin-bottom: 16px;
+  color: #000000;
+}
+
+.modal-content ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.modal-content li {
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+.modal-content button {
+  background: #0714aa;
+  color: #f8f1f1;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.modal-content button:hover {
+  background: rgb(168, 10, 10);
+}
