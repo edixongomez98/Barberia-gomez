@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Barberia-gomez/static/css/main.5066e5ce.css",
+    "main.css": "/Barberia-gomez/static/css/main.69c5608d.css",
     "main.js": "/Barberia-gomez/static/js/main.29fde69f.js",
     "static/js/453.156d32fb.chunk.js": "/Barberia-gomez/static/js/453.156d32fb.chunk.js",
     "index.html": "/Barberia-gomez/index.html",
-    "main.5066e5ce.css.map": "/Barberia-gomez/static/css/main.5066e5ce.css.map",
+    "main.69c5608d.css.map": "/Barberia-gomez/static/css/main.69c5608d.css.map",
     "main.29fde69f.js.map": "/Barberia-gomez/static/js/main.29fde69f.js.map",
     "453.156d32fb.chunk.js.map": "/Barberia-gomez/static/js/453.156d32fb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5066e5ce.css",
+    "static/css/main.69c5608d.css",
     "static/js/main.29fde69f.js"
   ]
 }
