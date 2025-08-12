@@ -2,16 +2,20 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  // Estado para saber qué modal de precios está abierto (corte, afeitado, barba)
   const [modalType, setModalType] = useState(null);
+
+  // Estado para mostrar o no el modal de agendar cita
   const [showAgendar, setShowAgendar] = useState(false);
 
-  // Estado para agendar cita
+  // Estados para el formulario de agendar cita
   const [nombre, setNombre] = useState('');
   const [fecha, setFecha] = useState('');
   const [hora, setHora] = useState('');
   const [servicio, setServicio] = useState('Corte de cabello');
   const [confirmacion, setConfirmacion] = useState('');
 
+  // Información de los precios de cada servicio
   const modalContent = {
     corte: {
       title: "Precios Corte de Cabello",
@@ -37,10 +41,16 @@ function App() {
     }
   };
 
+  // Abrir modal de precios según el tipo
   const handleOpenModal = (type) => setModalType(type);
+
+  // Cerrar modal de precios
   const handleCloseModal = () => setModalType(null);
 
+  // Abrir modal para agendar cita
   const handleOpenAgendar = () => setShowAgendar(true);
+
+  // Cerrar modal de agendar y limpiar datos
   const handleCloseAgendar = () => {
     setShowAgendar(false);
     setConfirmacion('');
@@ -50,21 +60,35 @@ function App() {
     setServicio('Corte de cabello');
   };
 
+  // Enviar datos de la cita por WhatsApp
   const handleSubmit = (e) => {
-  e.preventDefault();
-  const mensaje = `¡Hola! Quiero agendar una cita:\nNombre: ${nombre}\nFecha: ${fecha}\nHora: ${hora}\nServicio: ${servicio}`;
-  const telefono = '3122284474'; // Pon aquí tu número con código de país, ejemplo: 5215551234567
-  const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-  window.open(url, '_blank');
-  setConfirmacion('¡SU CITA SE AGENDÓ EXITOSAMENTE, RECUERDA LLEGAR A TIEMPO!');
-};
+    e.preventDefault(); // Evita recargar la página
+
+    // Crear mensaje para WhatsApp
+    const mensaje = `¡Hola! Quiero agendar una cita:\nNombre: ${nombre}\nFecha: ${fecha}\nHora: ${hora}\nServicio: ${servicio}`;
+    
+    // Número de WhatsApp (cambiar por tu número real con código de país)
+    const telefono = '3122284474';
+    
+    // URL para abrir WhatsApp con el mensaje
+    const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+    
+    // Abrir WhatsApp en nueva pestaña
+    window.open(url, '_blank');
+
+    // Mostrar mensaje de confirmación
+    setConfirmacion('¡SU CITA SE AGENDÓ EXITOSAMENTE, RECUERDA LLEGAR A TIEMPO!');
+  };
 
   return (
     <div className="App">
+      {/* Encabezado con logo, nombre y opciones */}
       <header className="App-header">
         <img src={`${process.env.PUBLIC_URL}/logo.jpg`} alt="Logo Barbería" className="App-logo" />
         <h1>Barbería Gomez</h1>
         <p>Bienvenido a tu barbería de confianza.</p>
+
+        {/* Lista de servicios que abren el modal de precios */}
         <ul>
           <li style={{ cursor: 'pointer', textDecoration: 'underline' }} onClick={() => handleOpenModal('corte')}>
             Corte de cabello
@@ -76,8 +100,12 @@ function App() {
             Diseño de barba
           </li>
         </ul>
+
+        {/* Información de contacto */}
         <p>Horario: Lunes a Sábado, 8am - 6pm</p>
         <p>Contacto: 3122284474</p>
+
+        {/* Botón para abrir modal de agendar */}
         <button className="App-link" style={{ marginTop: 20, padding: '10px 24px' }} onClick={handleOpenAgendar}>
           Agendar cita
         </button>
@@ -98,11 +126,13 @@ function App() {
         </div>
       )}
 
-      {/* Modal de agendar cita */}
+      {/* Modal para agendar cita */}
       {showAgendar && (
         <div className="modal-overlay" onClick={handleCloseAgendar}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>
             <h2>Agendar Cita</h2>
+            
+            {/* Formulario para agendar cita */}
             <form onSubmit={handleSubmit} style={{ maxWidth: 400, margin: '0 auto' }}>
               <input
                 type="text"
@@ -139,7 +169,11 @@ function App() {
                 Agendar
               </button>
             </form>
+
+            {/* Mensaje de confirmación */}
             {confirmacion && <p style={{ marginTop: 20, color: '#6d06a4ff' }}>{confirmacion}</p>}
+            
+            {/* Botón para cerrar modal */}
             <button onClick={handleCloseAgendar} style={{ marginTop: 10 }}>Cerrar</button>
           </div>
         </div>

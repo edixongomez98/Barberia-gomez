@@ -1,90 +1,138 @@
 .App {
+  /* Centra el texto dentro del contenedor */
   text-align: center;
+  /* Fondo con degradado diagonal blanco a gris claro */
   background: linear-gradient(135deg, #fff 0%, #e3e3e3 100%);
+  /* Altura mínima que ocupa toda la ventana */
   min-height: 100vh;
 }
 
 .App-header {
+  /* Fondo con degradado vertical de azul oscuro */
   background: linear-gradient(9000deg, #030513 50%, #040b5d 100%);
+  /* Altura mínima del encabezado */
   min-height: 60vh;
+  /* Usa flexbox para centrar vertical y horizontalmente el contenido */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* Tamaño de fuente relativo a la pantalla */
   font-size: calc(12px + 2vmin);
+  /* Color del texto (oscuro con transparencia) */
   color: #040604fd;
+  /* Sombra para dar profundidad */
   box-shadow: 0 4px 16px rgba(9, 1, 8, 0.785);
+  /* Espaciado arriba y abajo */
   padding: 40px 0;
 }
 
-
 h1 {
+  /* Fuente Montserrat para un estilo moderno */
   font-family: 'Montserrat', sans-serif;
-  font-size: 4rem;
+  /* Tamaño grande para título */
+  font-size: 3rem;
+  /* Espacio entre letras para estética */
   letter-spacing: 2px;
+  /* Color azul brillante */
   color: #008cff;
+  /* Margen debajo para separar del contenido */
   margin-bottom: 16px;
+  /* Sombra de texto para efecto visual */
   text-shadow: 2px 2px 8px #9b03a0;
 }
 
 ul {
+  /* Quitar estilo por defecto de lista */
   list-style: none;
   padding: 0;
+  /* Margen para separar arriba y abajo */
   margin: 24px 0;
 }
 
 li {
+  /* Fondo blanco para ítems de lista */
   background: #fff;
+  /* Color del texto azul oscuro */
   color: #0a1056;
+  /* Borde grueso rojo a la izquierda para resaltar */
   border-left: 25px solid #d32f2f;
+  /* Bordes redondeados */
   border-radius: 4px;
+  /* Margen entre ítems */
   margin: 8px 0;
+  /* Relleno interno para espacio */
   padding: 12px 24px;
+  /* Tamaño de fuente legible */
   font-size: 1.2rem;
+  /* Sombra ligera para levantar el elemento */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  /* Fuente en negrita para énfasis */
   font-weight: bold;
 }
 
 p {
+  /* Texto blanco */
   color: #fff;
+  /* Fuente Montserrat para consistencia */
+  font-family: 'Montserrat', sans-serif;
+  /* Tamaño de fuente un poco más grande */
   font-size: 1.1rem;
+  /* Margen para separar párrafos */
   margin: 12px 0;
 }
 
 .App-link {
+  /* Color azul vibrante para enlaces */
   color: #3c00ff;
+  /* Subrayado para indicar link */
   text-decoration: underline;
+  /* Fuente en negrita */
   font-weight: bold;
 }
 
+/* Estilos responsivos para pantallas menores a 600px */
 @media (max-width: 600px) {
   .App-header {
+    /* Fuente más pequeña */
     font-size: 1rem;
+    /* Menor padding */
     padding: 20px 0;
   }
 
   h1 {
+    /* Tamaño de título más pequeño */
     font-size: 2rem;
   }
 
   li {
+    /* Texto más pequeño y menos padding para pantallas pequeñas */
     font-size: 1rem;
     padding: 8px 12px;
   }
 }
 
 .App-logo {
-  width: 145px;
-  height: 145px;
+  /* Tamaño fijo para el logo */
+  width: 125px;
+  height: 125px;
+  /* Borde redondeado para círculo */
   border-radius: 50%;
+  /* Margen debajo del logo */
   margin-bottom: 20px;
+  /* Sombra suave */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  /* Borde rojo para destacar */
   border: 4px solid #f01616;
+  /* Fondo negro oscuro */
   background: #0a0101;
+  /* Animación continua de rotación 3D */
   animation: App-logo-spin-3d 5s linear infinite;
+  /* Preserva efecto 3D para rotación */
   transform-style: preserve-3d;
 }
 
+/* Definición de la animación rotación 3D */
 @keyframes App-logo-spin-3d {
   from {
     transform: rotateY(0deg);
@@ -95,57 +143,85 @@ p {
   }
 }
 
+/* Estilo del overlay del modal (capa oscura detrás del modal) */
 .modal-overlay {
+  /* Posición fija para cubrir toda la pantalla */
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+  /* Fondo semitransparente oscuro */
   background: rgba(30, 30, 30, 0.7);
+  /* Centrado del contenido modal */
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Asegura que esté encima de otros elementos */
   z-index: 1000;
 }
 
+/* Contenedor del contenido del modal */
 .modal-content {
-  background: #7e6f38;
+  /* Fondo marrón */
+  background: #000000c5;
+  /* Color del texto */
   color: #1a237e;
+  /* Relleno interno */
   padding: 32px 24px;
+  /* Bordes redondeados */
   border-radius: 12px;
+  /* Sombra para levantar el modal */
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  /* Ancho mínimo para que no sea muy pequeño */
   min-width: 280px;
+  /* Texto centrado */
   text-align: center;
 }
 
 .modal-content h2 {
+  /* Margen inferior para separar del contenido */
   margin-bottom: 16px;
+  /* Color negro para el título */
   color: #000000;
 }
 
 .modal-content ul {
+  /* Sin estilo de lista y margen inferior */
   list-style: none;
   padding: 0;
   margin-bottom: 16px;
 }
 
 .modal-content li {
+  /* Margen entre ítems */
   margin: 8px 0;
+  /* Tamaño de fuente legible */
   font-size: 1.1rem;
 }
 
 .modal-content button {
+  /* Fondo azul */
   background: #0714aa;
+  /* Texto blanco */
   color: #f8f1f1;
+  /* Sin borde */
   border: none;
+  /* Espaciado interno */
   padding: 8px 24px;
+  /* Bordes redondeados */
   border-radius: 6px;
+  /* Cursor puntero al pasar encima */
   cursor: pointer;
+  /* Tamaño de fuente */
   font-size: 1rem;
+  /* Negrita */
   font-weight: bold;
+  /* Transición suave al cambiar el fondo */
   transition: background 0.2s;
 }
 
+/* Cambio de color del botón al pasar el mouse */
 .modal-content button:hover {
   background: rgb(168, 10, 10);
 }
